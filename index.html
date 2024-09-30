@@ -11,9 +11,10 @@
 <body>
 
     <div class="container flex">
+
         <main class="w-3/4 border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg font-iran-sans">
 
-            <div class="flex justify-between">
+            <div class="flex justify-between pt-2 px-3">
                 <p>سبد خرید شما</p>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -56,8 +57,8 @@
                 </div>
                 <div class="flex">
                     <div class="w-1/4">
-                        <div class="flex rounded-sm border-opacity-50 border-stone-400 border-2 w-fit mx-auto">
-                            <button class="p-2 hover:bg-stone-400">
+                        <div class="flex rounded-lg border-opacity-50 border-stone-400 border-2 w-fit mx-auto">
+                            <button class="p-2 hover:bg-lime-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-plus-lg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -65,7 +66,7 @@
                                 </svg>
                             </button>
                             <p class="p-2">1</p>
-                            <button class="p-2 hover:bg-stone-400">
+                            <button class="p-2 hover:bg-rose-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-trash3" viewBox="0 0 16 16">
                                     <path
@@ -115,8 +116,8 @@
                 </div>
                 <div class="flex">
                     <div class="w-1/4">
-                        <div class="flex rounded-sm border-opacity-50 border-stone-400 border-2 w-fit mx-auto">
-                            <button class="p-2 hover:bg-stone-400">
+                        <div class="flex rounded-lg border-opacity-50 border-stone-400 border-2 w-fit mx-auto">
+                            <button class="p-2 hover:bg-lime-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-plus-lg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -124,7 +125,7 @@
                                 </svg>
                             </button>
                             <p class="p-2">1</p>
-                            <button class="p-2 hover:bg-stone-400">
+                            <button class="p-2 hover:bg-rose-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-trash3" viewBox="0 0 16 16">
                                     <path
@@ -143,10 +144,76 @@
             </div>
 
         </main>
-        <aside class="font-Mikhak w-1/4 border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, voluptatibus. Unde provident minima
-            cum, similique voluptatum alias. Maiores vel commodi incidunt quam facilis earum odit eum voluptatibus
-            nesciunt tenetur. Ratione!
+
+        <aside class="w-1/4 font-Mikhak">
+
+            <div class="flex flex-col border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg h-fit">
+                <div class="flex justify-between py-4 px-2">
+                    <p>قیمت کالا</p>
+                    <p><span>200,000,000</span> تومان</p>
+                </div>
+                <div class="flex justify-between py-4 px-2">
+                    <p>جمع سبد خرید</p>
+                    <p><span>200,000,000</span> تومان</p>
+                </div>
+                <div class="flex justify-between py-4 px-2">
+                    <p>سود شما از خرید</p>
+                    <p><span>200,000,000</span> تومان</p>
+                </div>
+                <button class="w-3/4 mx-auto my-2 py-2 bg-lime-300 hover:bg-lime-500 rounded-lg shadow-sm">تایید و تکمیل
+                    سفارش</button>
+            </div>
+
+            <p class="opacity-70 text-xs py-4 px-6">
+                هزینه این سفارش هنوز پرداخت نشده است و در صورت اتمام موجودی، کالاها از سبد خرید حذف میشوند
+            </p>
+
+            <div
+                class="border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg bg-lime-200 bg-rose-200">
+                <p class="flex">
+                    <span class="me-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-x-circle-fill text-rose-600" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                        </svg>
+                    </span>
+                    <span class="me-2 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-check-circle-fill text-lime-500" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                    </span>
+                    ارسال رایگان
+                </p>
+                <p class="flex mt-2">
+                    <span class="me-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-x-circle-fill text-rose-600" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                        </svg>
+                    </span>
+                    <span class="me-2 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-check-circle-fill text-lime-500" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                    </span>
+                    10% تخفیف
+                </p>
+                <p class="opacity-80 text-xs py-2 px-6">
+                    <span>1,599,000</span>
+                    هزارتومان هزینه ارسال به کشور ایران
+                    <span>
+                        برای کاربرانی که بالای 4 کالا خرید میکنند یا جمع سبد خرید آنها بالای دیویست میلیون تومان باشد
+                        رایگان محاسبه میشود همچنین خرید بالای سیصد میلیون تومان شامل 10% میشود
+                    </span>
+                </p>
+            </div>
+
         </aside>
     </div>
 
