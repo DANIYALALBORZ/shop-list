@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: IranSans;
+    src: url(../fonts/iran-sans/IRANSansWeb.ttf) format('truetype'),
+        url(../fonts/iran-sans/IRANSansWeb.eot) format('embedded-opentype'),
+        url(../fonts/iran-sans/IRANSansWeb.woff) format('woff'),
+        url(../fonts/iran-sans/IRANSansWeb.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: Mikhak;
+    src: url(../fonts/Mikhak-variable/Mikhak-FD[DSTY\,KSHD\,wght].ttf) format('truetype'),
+        url(../fonts/Mikhak-variable/Mikhak-FD[DSTY\,KSHD\,wght].woff2) format('woff2');
+}

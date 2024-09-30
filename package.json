@@ -1,0 +1,15 @@
+{
+  "name": "shop-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwind -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "author": "Danial",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
