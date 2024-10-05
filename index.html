@@ -27,8 +27,6 @@
                     </svg>
                 </div>
             </div>
-            <!-- اتمام نوبار سبد خرید -->
-            <!-- اتمام محصول شماره یک -->
 
         </main>
         <!--اتمام لیست محصولات -->
@@ -38,16 +36,16 @@
 
             <div class="flex flex-col border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg h-fit">
                 <div class="flex justify-between py-4 px-2">
-                    <p>قیمت کالا</p>
-                    <p><span>200,000,000</span> تومان</p>
+                    <p>قیمت کالا <span id="products-count"></span></p>
+                    <p><span id="products-price"></span> تومان</p>
                 </div>
                 <div class="flex justify-between py-4 px-2">
                     <p>جمع سبد خرید</p>
-                    <p><span>200,000,000</span> تومان</p>
+                    <p><span id="products-price-offered"></span> تومان</p>
                 </div>
                 <div class="flex justify-between py-4 px-2">
                     <p>سود شما از خرید</p>
-                    <p><span>200,000,000</span> تومان</p>
+                    <p><span id="profit"></span> تومان</p>
                 </div>
                 <button class="w-3/4 mx-auto my-2 py-2 bg-lime-300 hover:bg-lime-500 rounded-lg shadow-sm">تایید و تکمیل
                     سفارش</button>
@@ -57,39 +55,27 @@
                 هزینه این سفارش هنوز پرداخت نشده است و در صورت اتمام موجودی، کالاها از سبد خرید حذف میشوند
             </p>
 
-            <div
-                class="border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg bg-lime-200 bg-rose-200">
+            <div id="offers-box"
+                class="border-opacity-50 border-stone-400 border-2 m-2 p-3 rounded-lg shadow-lg bg-rose-200">
                 <p class="flex">
                     <span class="me-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-x-circle-fill text-rose-600" viewBox="0 0 16 16">
+                        <svg id="free-delivery" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            fill="currentColor" class="bi bi-x-circle-fill text-rose-600" viewBox="0 0 16 16">
                             <path
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                         </svg>
                     </span>
-                    <span class="me-2 hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-check-circle-fill text-lime-500" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                        </svg>
                     </span>
                     ارسال رایگان
                 </p>
                 <p class="flex mt-2">
                     <span class="me-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-x-circle-fill text-rose-600" viewBox="0 0 16 16">
+                        <svg id="ten-percent" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            fill="currentColor" class="bi bi-x-circle-fill text-rose-600" viewBox="0 0 16 16">
                             <path
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                         </svg>
                     </span>
-                    <span class="me-2 hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-check-circle-fill text-lime-500" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                        </svg>
                     </span>
                     10% تخفیف
                 </p>
