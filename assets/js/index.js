@@ -61,16 +61,6 @@ function offeredCost() {
     return offeredCostTotal;
 }
 
-function offeredCostDecrease() {
-    // let offeredCostDecreaseTotal;
-    // products.forEach(product => {
-    //     offeredCostDecreaseTotal += product.offeredCost * product.count;
-    // })
-    // products[i].count
-}
-// offeredCost()
-/////////////////////////////////////////////////
-
 // تابع های آپدیت کننده لیست قیمت
 
 function increaseProductLength() {
@@ -103,12 +93,44 @@ function profit() {
 // سبد خالی
 function eraseShopList() {
     document.getElementById('profit').textContent = 0;
-    document.getElementById('products-count').innerHTML = "";
+    document.getElementById('products-count').innerHTML = 0;
     document.getElementById('products-price').innerHTML = 0;
     document.getElementById('products-price-offered').innerHTML = 0;
 }
 
 //////////////////////////////////////////////////
+
+// باکس تخفیفات و هدایا 
+
+function offers() {
+    if (mainCost >= 800000000 && productsLength >= 4) {
+        document.getElementById('ten-percent').classList.remove("text-rose-600");
+        document.getElementById('ten-percent').classList.add("text-lime-500");
+        document.getElementById('offers-box').classList.remove("bg-rose-200");
+        document.getElementById('offers-box').classList.add("bg-lime-200");
+        document.getElementById('free-delivery').classList.remove("text-rose-600");
+        document.getElementById('free-delivery').classList.add("text-lime-500");
+    } else if (mainCost >= 800000000 && productsLength <= 4) {
+        document.getElementById('ten-percent').classList.remove("text-rose-600");
+        document.getElementById('ten-percent').classList.add("text-lime-500");
+        document.getElementById('offers-box').classList.remove("bg-rose-200");
+        document.getElementById('offers-box').classList.add("bg-lime-200");
+    } else if (mainCost >= 600000000 || productsLength >= 4) {
+        document.getElementById('offers-box').classList.remove("bg-rose-200");
+        document.getElementById('offers-box').classList.add("bg-lime-200");
+        document.getElementById('free-delivery').classList.remove("text-rose-600");
+        document.getElementById('free-delivery').classList.add("text-lime-500");
+    } else {
+        document.getElementById('ten-percent').classList.add("text-rose-600");
+        document.getElementById('ten-percent').classList.remove("text-lime-500");
+        document.getElementById('offers-box').classList.add("bg-rose-200");
+        document.getElementById('offers-box').classList.remove("bg-lime-200");
+        document.getElementById('free-delivery').classList.add("text-rose-600");
+        document.getElementById('free-delivery').classList.remove("text-lime-500");
+    }
+}
+offers()
+// //////////////////////////////////////////////
 
 let allPrices = 0;
 products.forEach(p => {
@@ -143,7 +165,7 @@ if (productsLength > 0) {
         productImgContainer.appendChild(productImg);
 
         let productDescriptionContainer = document.createElement('div');
-        productDescriptionContainer.className = 'w-3/4 leading-8';
+        productDescriptionContainer.className = 'w-3/4 text-[1rem] ms-5 leading-8';
         product.appendChild(productDescriptionContainer);
 
         let productName = document.createElement('h3');
@@ -195,9 +217,6 @@ if (productsLength > 0) {
             if (products[i].count < products[i].inventory) {
                 products[i].count += 1;
                 productCountNumber.textContent = products[i].count;
-
-
-
                 if (products[i].fastDelivery) {
                     let totalPrice = products[i].price * products[i].count; //مجموع قیمت محصول به ازای تعداد
                     productFinalPrice.innerHTML = totalPrice.toLocaleString();
@@ -218,6 +237,7 @@ if (productsLength > 0) {
 
                 }
                 increaseProductLength()
+                offers()
 
             } else if (products[i].count <= products[i].inventory) {
                 alert("اتمام موجودی")
@@ -259,11 +279,12 @@ if (productsLength > 0) {
 
                 }
                 decreaseProductLength();
+                offers()
             } else if (products[i].count >= 1) {
                 let remove = confirm(`آیا میخواهید که ${products[i].name} از سبد خریدتان حذف شود ؟`);
                 if (remove && productsLength <= 1) {
+                    products[i].offeredCost = 0;
                     products[i].count--
-                    decreaseProductLength();
                     productContainer.remove();
                     let emptyList = document.createElement('div');
                     emptyList.classList = 'flex flex-col w-fit mx-auto py-4 text-stone-400';
@@ -278,26 +299,22 @@ if (productsLength > 0) {
                     eraseShopList()
                     decreaseProductLength();
                 } else if (remove) {
-                    console.log('1', products[i].count);
+                    products[i].offeredCost = 0;
                     products[i].count--
                     decreaseProductLength();
                     productContainer.remove();
-                    offeredCost();
-                    // offeredCostTotal - products[1].offeredCost;
-                    offeredCostDecrease()
-                    console.log(products[i].count);
                 }
-
+                offers()
             }
         });
         productCount.appendChild(decreaseProduct);
 
         let productPriceNumber = document.createElement('div');
-        productPriceNumber.classList = 'w-3/4 flex items-center';
+        productPriceNumber.classList = 'w-2/4 ms-8 flex items-center';
         productPrice.appendChild(productPriceNumber);
 
         let productFinalPrice = document.createElement('p');
-        productFinalPrice.className = 'me-2 font-mono font-bold'
+        productFinalPrice.className = 'me-2 font-mono font-bold flex flex-wrap items-center'
         if (products[i].fastDelivery) {
             finalPrice = products[i].price * products[i].count;
             productFinalPrice.innerHTML = finalPrice.toLocaleString();
@@ -317,6 +334,7 @@ if (productsLength > 0) {
         productPriceNumber.appendChild(productFinalPrice);
 
         let productPriceCurrency = document.createElement('p');
+        productPriceCurrency.className = 'flex flex-wrap items-center';
         productPriceCurrency.textContent = 'تومان';
         productPriceNumber.appendChild(productPriceCurrency);
     }
@@ -333,27 +351,6 @@ if (productsLength > 0) {
     document.getElementById('products-list').appendChild(emptyList);
 }
 
-
-if (allPrices >= 300000000 && productsLength >= 4) {
-    document.getElementById('ten-percent').classList.remove("text-rose-600");
-    document.getElementById('ten-percent').classList.add("text-lime-500");
-    document.getElementById('offers-box').classList.remove("bg-rose-200");
-    document.getElementById('offers-box').classList.add("bg-lime-200");
-    document.getElementById('free-delivery').classList.remove("text-rose-600");
-    document.getElementById('free-delivery').classList.add("text-lime-500");
-} else if (allPrices >= 300000000) {
-    document.getElementById('ten-percent').classList.remove("text-rose-600");
-    document.getElementById('ten-percent').classList.add("text-lime-500");
-    document.getElementById('offers-box').classList.remove("bg-rose-200");
-    document.getElementById('offers-box').classList.add("bg-lime-200");
-} else {
-    document.getElementById('ten-percent').classList.add("text-rose-600");
-    document.getElementById('ten-percent').classList.remove("text-lime-500");
-    document.getElementById('offers-box').classList.add("bg-rose-200");
-    document.getElementById('offers-box').classList.remove("bg-lime-200");
-    document.getElementById('free-delivery').classList.add("text-rose-600");
-    document.getElementById('free-delivery').classList.remove("text-lime-500");
-}
 
 
 offeredCost()
